@@ -9,6 +9,7 @@ import Username from '../settingsOptions/UserName';
 import BasicModal from '../Modal';
 import Password from '../settingsOptions/Password';
 import "./Settings.scss"
+import Descrption from '../settingsOptions/Description';
 
 const Settings = ({ user, setReloadApp }) => {
 
@@ -77,6 +78,9 @@ const Settings = ({ user, setReloadApp }) => {
                     setShow={setShow}
                     title={title}
                     children={contentModal}
+                />
+                <Descrption
+                    user={user}
                 />
             </div>
         </div >

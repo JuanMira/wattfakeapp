@@ -1,0 +1,54 @@
+@import "../../scss/_colors.scss";
+.ui.container {
+  display: flex;
+  .row {
+    .ui.image {
+      height: 550px;
+    }
+  }
+
+  label {
+    margin: 20px;
+    float: right;
+    font-size: 1.6rem;
+  }
+
+  .ui.toggle.checkbox input:focus:checked ~ .box:before,
+  .ui.toggle.checkbox input:focus:checked ~ label:before {
+    background-color: $secondar-color !important;
+  }
+  .container.create-history {
+    margin-top: 50px;
+    .ui.fluid.input {
+      margin-bottom: 20px;
+      input {
+        height: 60px;
+      }
+    }
+
+    .row {
+      .descripcion {
+        height: 60px;
+        margin-bottom: 20px;
+        textarea {
+          margin: 20px;
+          height: 60px;
+          min-height: 20px;
+        }
+      }
+
+      textarea {
+        margin-top: 20px;
+        height: 250px;
+      }
+    }
+  }
+  .ui.fluid.button {
+    background-color: $secondar-color;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: $hover-secondary;
+    }
+  }
+}

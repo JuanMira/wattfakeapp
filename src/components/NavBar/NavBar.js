@@ -6,8 +6,6 @@ import "firebase/auth";
 import "./NavBar.scss";
 const NavBar = ({ user }) => {
 
-    console.log(user)
-
     const sessionHandler = () => {
         firebase.auth().signOut().then(res => {
             console.log("session cerrada")
@@ -19,14 +17,14 @@ const NavBar = ({ user }) => {
 
     return (
         <div>
-            <Menu size="huge">
+            <Menu size="huge" fixed='top'>
                 <Menu.Item
                     to="/"
                     as={Link}
                     name="home"
                     link
                 >
-                    <Icon name="home " /> Inicio
+                    <Icon name="home" /> Inicio
                     </Menu.Item>
                 <Menu.Item
                     to="/createHistory"

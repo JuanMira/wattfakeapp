@@ -10,20 +10,12 @@ const LoggedLayout = ({ user, setReloadApp }) => {
 
     return (
         <Router>
-            <Grid>
-                <Grid.Row>
-                    <Grid.Column width={16}>
-                        <NavBar user={user} />
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column width={14}>
-                        <Container>
-                            <Routes user={user} setReloadApp={setReloadApp} />
-                        </Container>
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
+
+            <NavBar user={user} />
+
+            <Container>
+                <Routes user={user} setReloadApp={setReloadApp} />
+            </Container>
         </Router>
     );
 }

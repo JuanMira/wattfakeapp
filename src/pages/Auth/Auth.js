@@ -1,6 +1,5 @@
-import React, { Fragment, useState } from 'react';
-import { Grid, Image, Container, Button } from 'semantic-ui-react';
-import AuthOptions from '../../components/auth/authOptions/AuthOptions';
+import React, { useState } from 'react';
+import { Grid, Image, Button } from 'semantic-ui-react';
 import Login from '../../components/auth/login/Login';
 import LoginImage from '../../asstes/5836.jpg';
 import Register from '../../components/auth/Register/Register';
@@ -22,12 +21,12 @@ const Auth = () => {
     }
 
     return (
-        <Grid columns={3} divided >
+        <Grid divided >
             <Grid.Row >
-                <Grid.Column width={8} mobile={16} tablet={8} computer={8} >
+                <Grid.Column width={7}  >
                     <Image src={LoginImage} />
                 </Grid.Column>
-                <Grid.Column width={8} computer={8} >
+                <Grid.Column width={4} computer={8} >
                     <div style={{ marginTop: '150px', marginRight: '10rem', marginLeft: '10rem' }}>
                         <Button.Group>
                             <Button

@@ -1,0 +1,30 @@
+$spacing-medium: 1.6rem;
+$spacing-small: $spacing-medium * 0.5;
+$spacing-smedium: $spacing-medium * 0.707;
+$spacing-large: $spacing-medium * 2;
+$spacing-xlarge: $spacing-medium * 4;
+$spacing-xxlarge: $spacing-medium * 8;
+$box-size: $spacing-xxlarge;
+
+.container-flex {
+  display: grid;
+  grid-gap: $spacing-smedium;
+  grid-row-start: 1;
+  grid-template-columns: repeat(1, 360px);
+  grid-template-rows: repeat(auto-fit, 250px);
+  justify-content: center;
+  max-width: 150em;
+  height: 500px;
+  justify-content: center;
+  display: flex;
+  > .ui.card {
+    margin-top: -1px;
+  }
+  .ui.link.card {
+    width: 100%;
+
+    img {
+      height: 40%px;
+    }
+  }
+}

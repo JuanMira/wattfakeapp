@@ -18,6 +18,7 @@
       background-color: $secondar-color;
       color: #fff;
       transition: background-color 0.3s ease;
+      padding: 10px;
       &:hover {
         background-color: $hover-secondary;
       }
