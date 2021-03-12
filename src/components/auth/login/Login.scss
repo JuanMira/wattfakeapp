@@ -1,0 +1,27 @@
+@import "../../../scss/_colors.scss";
+
+.login-form {
+  margin-top: 50px;
+  .ui.form {
+    .field {
+      .input {
+        margin-bottom: 5px;
+
+        &.error {
+          input {
+            border-bottom: 1px solid red;
+          }
+        }
+      }
+    }
+
+    .button {
+      background-color: $secondar-color;
+      color: #fff;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: $hover-secondary;
+      }
+    }
+  }
+}

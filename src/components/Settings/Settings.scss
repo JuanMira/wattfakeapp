@@ -1,0 +1,40 @@
+@import "../../scss/_colors.scss";
+
+.settings {
+  margin-top: 60px;
+  margin-left: 20%;
+  div {
+    margin: 0 auto;
+    .ui.medium.circular.image,
+    img {
+      margin: 0 auto;
+      width: 350px;
+      height: 350px;
+      margin-bottom: 50px;
+      border-radius: 100%;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  i {
+    background-color: $primary-color;
+    color: #fff;
+  }
+  &__user {
+    margin-right: 100px;
+    .username,
+    .password {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+      }
+      i {
+      }
+    }
+  }
+}

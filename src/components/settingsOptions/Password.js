@@ -13,23 +13,18 @@ const Password = ({ setShow, setTitle, setContentModal }) => {
     }
 
     return (
-        <Grid>
-            <Grid.Row>
-                <Grid.Column width={10}>
-                    <h2>Contraseña : **** **** **** </h2>
-                </Grid.Column>
-                <Grid.Column>
-                    <Icon
-                        name="pencil"
-                        circular
-                        size="large"
-                        link
-                        onClick={onEdit}
-                    />
-                </Grid.Column>
-            </Grid.Row>
+        <div className="password">
 
-        </Grid >
+            <h2>Contraseña : **** **** **** </h2>
+
+            <Icon
+                name="pencil"
+                circular
+                size="large"
+                link
+                onClick={onEdit}
+            />
+        </div>
     );
 }
 

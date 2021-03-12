@@ -19,25 +19,18 @@ const Username = ({ user, setShow, setContentModal, setTitle, setReloadApp }) =>
     }
 
     return (
-        <Grid>
-            <Grid.Row>
-                <Grid.Column width={10}>
-                    <h2>Nombre de usuario : {user.displayName}</h2>
-                </Grid.Column>
-                <Grid.Column>
+        <div className="username">
+            <h2>Nombre de usuario : {user.displayName}</h2>
 
-                    <Icon
-                        name="pencil"
-                        circular
-                        size="large"
-                        link
-                        onClick={onClick}
-                    />
 
-                </Grid.Column>
-            </Grid.Row>
-
-        </Grid >
+            <Icon
+                name="pencil"
+                circular
+                size="large"
+                link
+                onClick={onClick}
+            />
+        </div>
     );
 }
 

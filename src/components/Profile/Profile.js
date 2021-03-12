@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, Segment } from 'semantic-ui-react';
 import MyProfile from '../MyProfile/MyProfile';
+import "./Profile.scss"
 const Profile = ({ user }) => {
 
     const [actualItem, setActualItem] = useState({
@@ -18,7 +19,7 @@ const Profile = ({ user }) => {
 
     const { activeItem } = actualItem;
     return (
-        <div>
+        <div className="profile">
             <Menu pointing secondary>
                 <Menu.Item
                     name="Perfil"

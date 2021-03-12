@@ -1,0 +1,14 @@
+@import "../../scss/_colors.scss";
+
+.avatar {
+  margin: 50px;
+  border-radius: 50%;
+}
+
+.description {
+  margin-top: 50px;
+  p {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+}

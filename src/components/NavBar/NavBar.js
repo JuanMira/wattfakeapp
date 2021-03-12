@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, Icon, Dropdown } from 'semantic-ui-react';
 import firebase from '../../utils/firebase';
 import "firebase/auth";
+import "./NavBar.scss";
 const NavBar = ({ user }) => {
 
     console.log(user)
@@ -18,7 +19,7 @@ const NavBar = ({ user }) => {
 
     return (
         <div>
-            <Menu className="menu-left" size="huge  ">
+            <Menu size="huge">
                 <Menu.Item
                     to="/"
                     as={Link}

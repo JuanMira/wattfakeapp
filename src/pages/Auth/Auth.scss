@@ -1,0 +1,12 @@
+@import "../../scss/colors";
+
+.ui.buttons {
+  width: 100%;
+  .ui.primary.button {
+    background-color: $secondar-color;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: $hover-secondary;
+    }
+  }
+}

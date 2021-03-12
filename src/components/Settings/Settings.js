@@ -8,6 +8,7 @@ import "firebase/storage";
 import Username from '../settingsOptions/UserName';
 import BasicModal from '../Modal';
 import Password from '../settingsOptions/Password';
+import "./Settings.scss"
 
 const Settings = ({ user, setReloadApp }) => {
 
@@ -45,47 +46,40 @@ const Settings = ({ user, setReloadApp }) => {
     }
 
     return (
-        <Grid>
-            <Grid.Row>
-                <Grid.Column width={8}>
-                    <div {...getRootProps()}>
-                        <input {...getInputProps()} />
-                        {isDragActive ? (
-                            <Image src={UserIcon} size='medium' circular />
-                        ) : (
-                            <Image src={avatarUrl ? avatarUrl : UserIcon} size='medium' circular />
-                        )}
+        <div className="settings">
 
-                    </div>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                    <Grid.Row>
-                        <Username
-                            user={user}
-                            setShow={setShow}
-                            setContentModal={setContentModal}
-                            setTitle={setTitle}
-                            setReloadApp={setReloadApp}
-                        />
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Password
-                            user={user}
-                            setShow={setShow}
-                            setContentModal={setContentModal}
-                            setTitle={setTitle}
-                            setReloadApp={setReloadApp}
-                        />
-                    </Grid.Row>
-                </Grid.Column>
-            </Grid.Row>
-            <BasicModal
-                show={show}
-                setShow={setShow}
-                title={title}
-                children={contentModal}
-            />
-        </Grid>
+            <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                {isDragActive ? (
+                    <Image src={UserIcon} size='medium' circular />
+                ) : (
+                    <Image src={avatarUrl ? avatarUrl : UserIcon} size='medium' circular />
+                )}
+
+            </div>
+            <div className="settings__user">
+                <Username
+                    user={user}
+                    setShow={setShow}
+                    setContentModal={setContentModal}
+                    setTitle={setTitle}
+                    setReloadApp={setReloadApp}
+                />
+                <Password
+                    user={user}
+                    setShow={setShow}
+                    setContentModal={setContentModal}
+                    setTitle={setTitle}
+                    setReloadApp={setReloadApp}
+                />
+                <BasicModal
+                    show={show}
+                    setShow={setShow}
+                    title={title}
+                    children={contentModal}
+                />
+            </div>
+        </div >
     );
 }
 export default Settings;

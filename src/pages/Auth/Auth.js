@@ -4,6 +4,7 @@ import AuthOptions from '../../components/auth/authOptions/AuthOptions';
 import Login from '../../components/auth/login/Login';
 import LoginImage from '../../asstes/5836.jpg';
 import Register from '../../components/auth/Register/Register';
+import "./Auth.scss";
 const Auth = () => {
 
     const [selectedForm, setSelectedForm] = useState(null);

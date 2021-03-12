@@ -3,6 +3,7 @@ import { Button, Form, Input, Icon } from 'semantic-ui-react';
 import firebase from '../../../utils/firebase';
 import "firebase/auth";
 import { toast } from 'react-toastify';
+import "./Register.scss";
 const Register = () => {
 
     const [registerForm, setRegisterForm] = useState({
@@ -58,65 +59,67 @@ const Register = () => {
     }
 
     return (
-        <Form onSubmit={onSubmit}>
-            <Form.Field>
-                <label>Nombre de usuario</label>
-                <Input
-                    placeholder="Ingrese nombre de usuario"
-                    type="text"
-                    size="huge"
-                    name="userName"
-                    onChange={onChange} />
-            </Form.Field>
-            <Form.Field>
-                <label>Correo electronico</label>
-                <Input
-                    placeholder="Ingrese correo"
-                    type="email"
-                    size="huge"
-                    name="email"
-                    onChange={onChange}
-                />
-            </Form.Field>
-            <Form.Field>
-                <label>Contraseña</label>
-                <Input
-                    placeholder="Contraseña"
-                    type={showPassword ? "text" : "password"}
-                    size="huge"
-                    name="password"
-                    onChange={onChange}
-                    icon={showPassword ? (
-                        <Icon name="eye slash outline" link onClick={handlerPassword} />
-                    ) : (
-                        <Icon name="eye" link onClick={handlerPassword} />
-                    )}
-                />
-            </Form.Field>
-            <Form.Field>
-                <label>Cofirmar contraseña</label>
-                <Input
-                    placeholder="Contraseña"
-                    type={showPassword ? "text" : "password"}
-                    size="huge"
-                    name="confirmPassword"
-                    onChange={onChange}
-                    icon={showPassword ? (
-                        <Icon name="eye slash outline" link onClick={handlerPassword} />
-                    ) : (
-                        <Icon name="eye" link onClick={handlerPassword} />
-                    )}
+        <div className="register-login">
+            <Form onSubmit={onSubmit}>
+                <Form.Field>
+                    <label>Nombre de usuario</label>
+                    <Input
+                        placeholder="Ingrese nombre de usuario"
+                        type="text"
+                        size="huge"
+                        name="userName"
+                        onChange={onChange} />
+                </Form.Field>
+                <Form.Field>
+                    <label>Correo electronico</label>
+                    <Input
+                        placeholder="Ingrese correo"
+                        type="email"
+                        size="huge"
+                        name="email"
+                        onChange={onChange}
+                    />
+                </Form.Field>
+                <Form.Field>
+                    <label>Contraseña</label>
+                    <Input
+                        placeholder="Contraseña"
+                        type={showPassword ? "text" : "password"}
+                        size="huge"
+                        name="password"
+                        onChange={onChange}
+                        icon={showPassword ? (
+                            <Icon name="eye slash outline" link onClick={handlerPassword} />
+                        ) : (
+                            <Icon name="eye" link onClick={handlerPassword} />
+                        )}
+                    />
+                </Form.Field>
+                <Form.Field>
+                    <label>Cofirmar contraseña</label>
+                    <Input
+                        placeholder="Contraseña"
+                        type={showPassword ? "text" : "password"}
+                        size="huge"
+                        name="confirmPassword"
+                        onChange={onChange}
+                        icon={showPassword ? (
+                            <Icon name="eye slash outline" link onClick={handlerPassword} />
+                        ) : (
+                            <Icon name="eye" link onClick={handlerPassword} />
+                        )}
 
-                />
-            </Form.Field>
-            <Button
-                type="submit"
-                primary
-                fluid
-                size="huge"
-                loading={loading}
-            >Crear cuenta</Button>
-        </Form>
+                    />
+                </Form.Field>
+                <Button
+                    type="submit"
+                    primary
+                    fluid
+                    size="huge"
+                    loading={loading}
+                >Crear cuenta</Button>
+            </Form>
+        </div>
     );
 }
 

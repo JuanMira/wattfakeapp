@@ -1,0 +1,23 @@
+@import "../../scss/colors";
+
+.ui.huge.menu {
+  background-color: $primary-color;
+  border-radius: 0;
+  padding: 10px;
+  .item,
+  a.item,
+  .ui.item.dropdown {
+    color: #fff;
+
+    &:hover,
+    &.active {
+      color: #fff;
+      background-color: $hover-color !important;
+      cursor: pointer;
+    }
+
+    &.active {
+      border-color: $primary-color;
+    }
+  }
+}
