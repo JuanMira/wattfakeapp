@@ -6,10 +6,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import "firebase/auth";
 import Routes from '../routes/Routes';
 
-const LoggedLayout = ({ user }) => {
+const LoggedLayout = ({ user, setReloadApp }) => {
 
-
-    console.log(user);
     return (
         <Router>
             <Grid>
@@ -21,7 +19,7 @@ const LoggedLayout = ({ user }) => {
                 <Grid.Row>
                     <Grid.Column width={14}>
                         <Container>
-                            <Routes user={user} />
+                            <Routes user={user} setReloadApp={setReloadApp} />
                         </Container>
                     </Grid.Column>
                 </Grid.Row>

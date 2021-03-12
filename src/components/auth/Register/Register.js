@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form, Input, Icon } from 'semantic-ui-react';
 import firebase from '../../../utils/firebase';
 import "firebase/auth";
+import { toast } from 'react-toastify';
 const Register = () => {
 
     const [registerForm, setRegisterForm] = useState({
@@ -37,10 +38,10 @@ const Register = () => {
         setError(false);
         setLoading(true);
         firebase.auth().createUserWithEmailAndPassword(email, password).then(res => {
-            console.log("se a creado la cuenta")
+            toast.success("Cuentra registrada correctamente")
             changeUserName()
         }).catch(err => {
-            console.error(`Ha ocurrido un error ${err}`)
+            toast.error("Ha ocurrido un error");
         }).finally(() => {
             setLoading(false);
         })

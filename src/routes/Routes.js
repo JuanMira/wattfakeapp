@@ -4,7 +4,7 @@ import Profile from '../components/Profile/Profile';
 import Settings from '../components/Settings/Settings';
 
 //Pages
-const Routes = ({ user }) => {
+const Routes = ({ user, setReloadApp }) => {
     return (
         <Switch>
             <Route path="/" exact>
@@ -14,7 +14,7 @@ const Routes = ({ user }) => {
                 <Profile user={user} />
             </Route>
             <Route path="/settings" exact>
-                <Settings user={user} />
+                <Settings user={user} setReloadApp={setReloadApp} />
             </Route>
             <Route path="/viewHistorys">
                 <h1>Ver historias</h1>

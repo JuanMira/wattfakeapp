@@ -6,13 +6,15 @@ import firebase from '../../utils/firebase';
 import "firebase/auth";
 import "firebase/storage";
 import Username from '../settingsOptions/UserName';
+import BasicModal from '../Modal';
+import Password from '../settingsOptions/Password';
 
-const Settings = ({ user }) => {
+const Settings = ({ user, setReloadApp }) => {
 
     const [show, setShow] = useState(false);
-
+    const [contentModal, setContentModal] = useState(null);
+    const [title, setTitle] = useState(null);
     const [avatarUrl, setAvatarUrl] = useState(user.photoURL);
-    console.log(avatarUrl)
     const onDrop = useCallback(acceptedFiles => {
         const file = acceptedFiles[0];
         setAvatarUrl(URL.createObjectURL(file));
@@ -58,13 +60,31 @@ const Settings = ({ user }) => {
                 </Grid.Column>
                 <Grid.Column width={8}>
                     <Grid.Row>
-                        <Username user={user} show={show} setShow={setShow} />
+                        <Username
+                            user={user}
+                            setShow={setShow}
+                            setContentModal={setContentModal}
+                            setTitle={setTitle}
+                            setReloadApp={setReloadApp}
+                        />
                     </Grid.Row>
                     <Grid.Row>
-
+                        <Password
+                            user={user}
+                            setShow={setShow}
+                            setContentModal={setContentModal}
+                            setTitle={setTitle}
+                            setReloadApp={setReloadApp}
+                        />
                     </Grid.Row>
                 </Grid.Column>
             </Grid.Row>
+            <BasicModal
+                show={show}
+                setShow={setShow}
+                title={title}
+                children={contentModal}
+            />
         </Grid>
     );
 }

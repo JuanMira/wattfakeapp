@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Segment, Form, Button, Input } from 'semantic-ui-react';
 import firebase from '../../../utils/firebase';
 import "firebase/auth";
-import "./index.css"
+import "./index.css";
+import { toast } from 'react-toastify';
 const Login = () => {
 
     const [loginForm, setLoginForm] = useState({
@@ -24,14 +25,14 @@ const Login = () => {
 
     const onSubmit = () => {
         if (email.trim() === '' || password.trim() === '') {
-            setError();
+            setError(true);
             return
         }
         setLoading(true)
         firebase.auth().signInWithEmailAndPassword(email, password).then(res => {
-            console.log("logueado correctamente")
+            toast.success("Usuario logueado correctamente")
         }).catch(err => {
-            console.error(`Ha ocurrido un error ${err}`)
+            toast.error("Ha ocurrido un error vuelve a intentar")
         }).finally(() => {
             setLoading(false)
         })
